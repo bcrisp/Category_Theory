@@ -1,0 +1,11 @@
+From Graphs to N-Categories
+
+The canonical representation of complex systems is using mathematical graphs, a collection of nodes and vertices that symbolize information flow or network topology. Such graphs are useful for analyzing connected components and observing information flow, but useful properties of graphs such as transitive closure become useless when representing complex systems. In graph theory, a -> b and b -> c indicates that a -> c is a path in the graph, rarely a condition on all but the simplest of networks. If a was a remote DNS server, b my local computer, and c a network printer, transitive closure would suggest that the DNS server can connect to my network printer. In systems engineering we want to separate reachability from closure.
+
+It is this distinction that is the bulk of our work. If any device could access not only every device it is connected to, but every device from there recursively, systems engineering would be equivalent to recursive DNS lookups. Directed graphs without additional information give us no segregation or isolation.
+
+We return to graph representation because we feel that it offers a compelling representation of our topology. We can use containers to isolate our components, which quickly falls apart when there are mulitple ports, protocols, or access policies in play. In fact, an architect can draw a diagam for information flow that is tantalizingly close to the actual design of the system in question, but refinements upon this design quickly fall short and result in hand-waving and generalizations.
+
+Instead of an edge from a vertex to a vertex, imagine a 2-edge that embeds an outgoing edge from vertex a to an incoming edge in vertex b. Links of type A are the outbound context, and links of type B are the inbound context.
+
+Let a functor string be a series of categories linked by functors as mappings between them.
