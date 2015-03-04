@@ -1,0 +1,12 @@
+A Lamba Expression is a value.
+
+For instance, x is a valid lambda expression. It doesn't mean anything, but it's valid. (\x -> x . x) (\c -> c * c) 4
+
+
+Prelude Data.Function> let fx f = f (fx f)
+Prelude Data.Function> fx  (\f -> \n -> if n < 2 then n else f(n-1) + f (n-2)) 14
+
+
+Let's view a fixpoint of a lambda expression the value it "converges" to. Some functions, like (+1), will never terminate regardless of what input they're provided. Others will eventually converge on a specific value, at which point they're considered to have stopped or "terminated." The term for a function that calls itself and never terminates is "divergent", and a function that does terminate is "convergent."
+
+
